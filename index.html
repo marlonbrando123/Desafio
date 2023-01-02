@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="maskDesafio.css">
+
+<script> 
+    
+function encriptar (){
+var frase= document.getElementById("textoEncriptado").value.toLowerCase();
+
+//i = letras mayusculas y minusculas 
+// g es para que tome en cuenta toda la linea o la oracion
+// m tome en cuenta multiples lineas 
+var textoEncriptado = frase.replace(/e/img,"enter");
+var textoEncriptado = textoEncriptado.replace(/i/img,"imes");
+var textoEncriptado = textoEncriptado.replace(/a/img,"ai");
+var textoEncriptado = textoEncriptado.replace(/o/img,"ober");
+var textoEncriptado = textoEncriptado.replace(/u/img,"ufat");
+
+document.getElementById("textoDesencriptado").innerHTML=textoEncriptado;
+
+}
+
+function desencriptar (){
+var frase= document.getElementById("textoEncriptado").value.toLowerCase();
+
+//i = letras mayusculas y minusculas 
+// g es para que tome en cuenta toda la linea o la oracion
+// m tome en cuenta multiples lineas 
+var textoEncriptado = frase.replace(/enter/img,"e");
+var textoEncriptado = textoEncriptado.replace(/imes/img,"i");
+var textoEncriptado = textoEncriptado.replace(/ai/img,"a");
+var textoEncriptado = textoEncriptado.replace(/ober/img,"o");
+var textoEncriptado = textoEncriptado.replace(/ufat/img,"u");
+
+document.getElementById("textoDesencriptado").innerHTML=textoEncriptado;
+
+}
+
+function copiar(){
+    var contenido = document.querySelector("#textoDesencriptado");
+    contenido.select();
+    document.execCommand("copy");
+}
+
+
+
+
+
+
+    </script>
+    
+    <title>Document</title>
+</head>
+<title>Encriptador Alura-Oracle</title>
+<h1 style="text-align: center"><strong> Encriptador de Texto</strong></h1>   
+
+    <body>
+        <img src="Logo.png" class="logo">
+        <div class="cajag" >
+        <input class="caja1" type="text" id ="textoEncriptado">
+        <button class="caja2encriptado" type="button" id="botonEncriptado"> Encriptar</button>
+        <button class="caja3desencriptado" type="button" id="botonDesencriptado"> Desencriptar</button>
+        </div>
+ 
+   
+        <textarea class="areatexto" name ="resultado" id="textoDesencriptado" cols="40" rows="20"></textarea>
+        <button class="botoncopiar"type="button" id="copiar">copiar</button>
+
+    </body>
+
+<script> 
+var btn = document.querySelector("#botonEncriptado");
+btn.onclick = encriptar;
+
+var btn2 = document.querySelector("#botonDesencriptado");
+btn2.onclick = desencriptar;
+
+var btn3 = document.querySelector("#copiar");
+btn3.onclick = copiar;
+</script>
+        <footer class="pie" style="text-align:center" ><div><strong>Marco Villanueva estudiante Alura-Oracle</strong></div></footer>
+        </html>
